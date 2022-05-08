@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const app = express();
 const product = require('./routes/productRoute');
 const user = require('./routes/userRoute');
-const order = require('.routes/orderRoute');
+const order = require('./routes/orderRoute');
 const globalErrorHandler = require('./controller/errorController');
 
 app.use(express.json());
