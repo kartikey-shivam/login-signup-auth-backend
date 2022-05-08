@@ -31,8 +31,5 @@ router
 router
   .route('/reviews')
   .get(productController.getProductReviews)
-  .delete(
-    authController.isAuthenticated,
-    productController.deleteProductReviews
-  );
+  .delete(authController.isAuthenticated, productController.deleteReview);
 module.exports = router;

@@ -40,6 +40,10 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  // phoneNumber: {
+  //   type: Number,
+  //   required: true,
+  // },
   resetPasswordToken: String,
   resetPasswordExpires: Date,
   changedPasswordAt: Date,

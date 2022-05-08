@@ -1,14 +1,14 @@
 const catchAsync = require('../utils/catchAsync');
+const crypto = require('crypto');
 const AppError = require('../utils/appError');
 const User = require('../model/userModel');
 const createSendToken = require('../utils/jwtToken');
 const sendEmail = require('../utils/sendEmail');
-const crypto = require('crypto');
 
 //Register User
 exports.registerUser = catchAsync(async (req, res, next) => {
   const { name, email, password } = req.body;
-  const user = User.create({
+  const user = await User.create({
     name,
     email,
     password,
@@ -150,7 +150,8 @@ exports.updateProfile = catchAsync(async (req, res, next) => {
     email: req.body.email,
   };
 
-  //update avatar
+  //update avatar --todo
+
   const user = await User.findByIdAndUpdate(req.user.id, newUserData, {
     new: true,
     runValidators: true,
